@@ -1700,7 +1700,7 @@ const en=(e,t)=>{var i,r;const n=e._$AN;if(void 0===n)return!1;for(const e of n)
         id=${e}
         .sandboxBaseUrl=https://unpkg.com/playground-elements@${"0.14.8"}/
         .sandboxScope=__playground_swfs_${Pe}/
-        .projectSrc=/samples/${this.sample}/playground/playground.ts.json
+        .projectSrc=./${this.sample}/playground/playground.ts.json
       >
         <slot></slot>
       </playground-project>
