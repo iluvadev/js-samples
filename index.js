@@ -1714,10 +1714,9 @@ PERFORMANCE OF THIS SOFTWARE.
           .pragmas="on"
         >
         </playground-file-editor>
-      </div> 
-      
+      </div>
     </div>
-    `}firstUpdated(){new ResizeObserver((e=>{for(let t of e)parent.postMessage(t.contentRect,"*")})).observe(this.shadowRoot?.getElementById("playground"))}constructor(...e){super(...e),a(this,"sample",tn,this),a(this,"hideCode",nn,this)}}).styles=u`
+    `}firstUpdated(){new ResizeObserver((e=>{for(let t of e){const e={type:"resizeMessage",rect:t.contentRect};parent.postMessage(e,"*")}})).observe(this.shadowRoot?.getElementById("playground"))}constructor(...e){super(...e),a(this,"sample",tn,this),a(this,"hideCode",nn,this)}}).styles=u`
     :host {
       --border: 1px solid #dadce0;
       --border-radius: 8px;
