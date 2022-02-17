@@ -1652,7 +1652,7 @@ PERFORMANCE OF THIS SOFTWARE.
           .project=${e}
         ></playground-preview>
       </div>
-    `}firstUpdated(){this._configSetBeforeRender&&(this._project.config=this._configSetBeforeRender,this._configSetBeforeRender=void 0),this._projectSrcSetBeforeRender&&(this._project.projectSrc=this._projectSrcSetBeforeRender,this._projectSrcSetBeforeRender=void 0)}async update(e){var t;e.has("resizable")&&!1===this.resizable&&(null===(t=this._rhs)||void 0===t||t.style.removeProperty("--playground-preview-width")),super.update(e)}_onResizeBarPointerdown({pointerId:e}){const t=this._resizeBar;t.setPointerCapture(e);const i=this._rhs.style,{left:r,right:n}=this.getBoundingClientRect(),o=n-r,a=o-100,s=e=>{const t=Math.min(a,Math.max(100,n-e.clientX))/o*100;i.setProperty("--playground-preview-width",`${t}%`)};t.addEventListener("pointermove",s);const l=()=>{t.releasePointerCapture(e),t.removeEventListener("pointermove",s),t.removeEventListener("pointerup",l)};t.addEventListener("pointerup",l)}};var Ln,In,Mn,zn,Rn,Fn;On.styles=u`
+    `}firstUpdated(){this._configSetBeforeRender&&(this._project.config=this._configSetBeforeRender,this._configSetBeforeRender=void 0),this._projectSrcSetBeforeRender&&(this._project.projectSrc=this._projectSrcSetBeforeRender,this._projectSrcSetBeforeRender=void 0)}async update(e){var t;e.has("resizable")&&!1===this.resizable&&(null===(t=this._rhs)||void 0===t||t.style.removeProperty("--playground-preview-width")),super.update(e)}_onResizeBarPointerdown({pointerId:e}){const t=this._resizeBar;t.setPointerCapture(e);const i=this._rhs.style,{left:r,right:n}=this.getBoundingClientRect(),o=n-r,a=o-100,s=e=>{const t=Math.min(a,Math.max(100,n-e.clientX))/o*100;i.setProperty("--playground-preview-width",`${t}%`)};t.addEventListener("pointermove",s);const l=()=>{t.releasePointerCapture(e),t.removeEventListener("pointermove",s),t.removeEventListener("pointerup",l)};t.addEventListener("pointerup",l)}};var Ln,In,Mn,zn,Rn,Fn,Pn,Nn;On.styles=u`
     :host {
       display: flex;
       height: 350px;
@@ -1740,6 +1740,7 @@ PERFORMANCE OF THIS SOFTWARE.
         <slot></slot>
       </playground-project>
       <playground-preview
+        style=${St({height:this.previewHeight})}
         part="preview"        
         html-file="index.html"
         .project=${e}
@@ -1762,14 +1763,10 @@ PERFORMANCE OF THIS SOFTWARE.
         </playground-file-editor>
       </div>
     </div>
-    `}firstUpdated(){new ResizeObserver((e=>{for(let t of e){const e={type:"resizeMessage",rect:t.contentRect};parent.postMessage(e,"*")}})).observe(this.shadowRoot?.getElementById("playground"))}constructor(...e){super(...e),a(this,"sample",Mn,this),a(this,"hideCode",Rn,this)}}).styles=u`
+    `}firstUpdated(){new ResizeObserver((e=>{for(let t of e){const e={type:"resizeMessage",rect:t.contentRect};parent.postMessage(e,"*")}})).observe(this.shadowRoot?.getElementById("playground"))}constructor(...e){super(...e),a(this,"sample",Mn,this),a(this,"hideCode",Rn,this),a(this,"previewHeight",Pn,this)}}).styles=u`
     :host {
       --border: 1px solid #dadce0;
       --border-radius: 8px;
-    }
-
-    playground-preview {
-      min-height: 400px;
     }
 
     playground-preview::part(preview-toolbar) {
@@ -1832,5 +1829,5 @@ PERFORMANCE OF THIS SOFTWARE.
       --mdc-theme-primary: #1a73e8;
       --mdc-theme-on-primary: white;
     }
-  `,In=Ln,zn=pe(),Fn=pe(),Mn=o(In.prototype,"sample",[zn],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"add-map"}}),Rn=o(In.prototype,"hideCode",[Fn],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),In))||In;const Pn=new URL(document.location.href).searchParams,Nn=document.createElement("google-maps-sample");Nn.sample=Pn.get("sample"),Pn.get("hideCode")&&(Nn.hideCode=!0),document.body.append(Nn)})();
+  `,In=Ln,zn=pe(),Fn=pe(),Nn=pe(),Mn=o(In.prototype,"sample",[zn],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"add-map"}}),Rn=o(In.prototype,"hideCode",[Fn],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),Pn=o(In.prototype,"previewHeight",[Nn],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"400px"}}),In))||In;const $n=new URL(document.location.href).searchParams,Dn=document.createElement("google-maps-sample");Dn.sample=$n.get("sample"),$n.get("hideCode")&&(Dn.hideCode=!0),$n.has("previewHeight")&&(Dn.previewHeight=$n.get("previewHeight")),document.body.append(Dn)})();
 //# sourceMappingURL=index.js.map
